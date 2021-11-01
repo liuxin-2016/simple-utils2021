@@ -8,6 +8,7 @@ import Utils from "simple-utils2021"
 ```js
 Utils.isMobile()//返回手机系统或false；
 Utils.isUrl()//判断是否是正确链接
+Utils.getQueryString(name)//获取url参数
 Utils.secondsToString(value)//秒时间转换成时分秒
 Utils.isPhoneNumber()//判断手机号格式是否正确
 Utils.isEmail()//判断邮箱格式是否正确

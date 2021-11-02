@@ -11,7 +11,7 @@ export default class Utils {
     }
     //判断是否是正确链接
     static isUrl(path: string): boolean {
-        const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/;
+        var reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/;
         return reg.test(path);
     }
     //获取url参数
@@ -23,14 +23,14 @@ export default class Utils {
     }
     //时长转换时分秒显示
     static secondsToString(timer: number | string): string {
-        const seconds = Number(timer);
+        var seconds = Number(timer);
         if (seconds <= 0 || Object.is(seconds, null) || Object.is(seconds, undefined)) {
             return '0小时0分钟0秒';
         }
-        let hour = Math.floor(seconds / 60 / 60);
-        let minute = Math.max(0, Math.floor((seconds - hour * 60 * 60) / 60));
-        let second = seconds % 60;
-        let res = [];
+        var hour = Math.floor(seconds / 60 / 60);
+        var minute = Math.max(0, Math.floor((seconds - hour * 60 * 60) / 60));
+        var second = seconds % 60;
+        var res = [];
         res.push(hour, '小时');
         res.push(minute, '分钟');
         res.push(second, '秒');
@@ -38,12 +38,12 @@ export default class Utils {
     }
     //判断是否是手机号
     static isPhoneNumber(value: string): boolean {
-        const reg = /^1[345789][0-9]{9}$/;
+        var reg = /^1[345789][0-9]{9}$/;
         return reg.test(value)
     }
     //判断是否是邮箱
     static isEmail(value: string): boolean {
-        const reg = /^[\w-]+@([\w-]+\.)+(com|org|cc|cn|net)$/i;
+        var reg = /^[\w-]+@([\w-]+\.)+(com|org|cc|cn|net)$/i;
         return reg.test(value)
     }
     //判断身份证号码是否正确
@@ -75,7 +75,7 @@ export default class Utils {
     }
     //toast提示
     static toast(msg: string) {
-        let dom = document.createElement('div');
+        var dom = document.createElement('div');
         dom.innerHTML = msg;
         dom.style.color = '#333';
         dom.style.padding = '6px 10px';
@@ -94,7 +94,7 @@ export default class Utils {
         dom.style.textAlign = 'center';
         dom.style.zIndex = '2021';
         document.body.appendChild(dom);
-        setTimeout(() => document.body.removeChild(dom), 3000)
+        setTimeout(function(){document.body.removeChild(dom)} , 3000)
     }
     //保留小数位不进位
     static getnum(value: number, figure: number) {

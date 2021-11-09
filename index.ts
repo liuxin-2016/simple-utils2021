@@ -94,10 +94,16 @@ export default class Utils {
         dom.style.textAlign = 'center';
         dom.style.zIndex = '2021';
         document.body.appendChild(dom);
-        setTimeout(function(){document.body.removeChild(dom)} , 3000)
+        setTimeout(function () { document.body.removeChild(dom) }, 3000)
     }
     //保留小数位不进位
     static getnum(value: number, figure: number) {
         return parseInt(String(value * 10 ** figure)) / 10 ** figure;
+    }
+    //添加移动端控制台展示
+    static eruda() {
+        var eruda = "https://cdn.bootcss.com/eruda/1.5.2/eruda.min.js";
+        document.write(`<script src="${eruda}"></script>`);
+        document.write(`<script>eruda.init();</script>`);
     }
 }

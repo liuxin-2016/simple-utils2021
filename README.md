@@ -4,7 +4,8 @@
 使用方法：
 直接npm下载依赖；
 import Utils from "simple-utils2021"
-内置方法：
+
+- 内置方法：
 ```js
 Utils.isMobile()//返回手机系统或false；
 Utils.isUrl()//判断是否是正确链接
